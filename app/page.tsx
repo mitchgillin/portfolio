@@ -1,10 +1,6 @@
-"use client"
-import { useState } from "react";
 import { Spotlight } from "@/components/Spotlight";
 import { TypewriterEffect } from "@/components/typewriter-effect";
-import { HoveredLink, Menu, MenuItem, } from "@/components/navbar-menu";
-
-import { cn } from "@/utils";
+import { typewriterWords } from "@/utils/utils";
 
 const PHRASE = "Let's Build Something Cool!"
 const words = PHRASE.split(" ").map((word, idx) => {
@@ -17,6 +13,8 @@ const words = PHRASE.split(" ").map((word, idx) => {
 
 export default function Home() {
 
+  const PHRASE = "Let's Build Something Cool!"
+
   return (
     <>
       <Spotlight />
@@ -24,7 +22,7 @@ export default function Home() {
         <h1 className="w-fit text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           Mitch Gillin <br /> Leader. Team Builder. Consultant.
         </h1>
-        <TypewriterEffect words={words} />
+        <TypewriterEffect words={typewriterWords(PHRASE)} />
       </div>
     </ >
   );

@@ -17,7 +17,7 @@ const MenuWrapper = () => {
       </MenuItem>
       <MenuItem setActive={setActive} active={active} item="About">
         <div className="flex flex-col space-y-4 text-sm">
-          <HoveredLink href="/me">Me</HoveredLink>
+          <HoveredLink href="/about/me">Me</HoveredLink>
           <DisabledLink className="disabled:pointer-events-none" >Portfolio</DisabledLink>
         </div>
       </MenuItem>
