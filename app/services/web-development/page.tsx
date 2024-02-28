@@ -2,7 +2,7 @@ import React from "react";
 import { Meteors } from "@/components/meteors";
 import { SparklesCore } from "@/components/Sparkles";
 
-const WebDevelopmentPage: React.FC = (props: React.PropsWithoutRef) => {
+const WebDevelopmentPage: React.FC = () => {
 
   return (
     <div>
