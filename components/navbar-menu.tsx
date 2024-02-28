@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 
 const transition = {
   type: "spring",
@@ -16,12 +15,14 @@ export const MenuItem = ({
   setActive,
   active,
   item,
+  href,
   children,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
+  href?: string;
 }) => {
   return (
     <div onMouseEnter={() => setActive(item)} className="relative ">
@@ -29,7 +30,7 @@ export const MenuItem = ({
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
       >
-        {item}
+        {href ? <Link className="no-underline visited:text-black" href={href}>{item}</Link> : item}
       </motion.p>
       {active !== null && (
         <motion.div
@@ -86,3 +87,13 @@ export const HoveredLink = ({ children, ...rest }: any) => {
     </Link>
   );
 };
+
+export const DisabledLink = ({ children, ...rest }: any) => {
+  return (
+    <p
+      className="text-neutral-700 opacity-[0.5] dark:text-neutral-200 ">
+      {children}
+    </p>
+
+  )
+}
